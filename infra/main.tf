@@ -37,7 +37,9 @@ module "eks" {
   subnets         = module.vpc.private_subnets
 
   node_groups = {
-    default = {
+    arm = {
+      ami_type  = "AL2_ARM_64"
+
       desired_capacity = 1
       max_capacity     = 1
       min_capacity     = 1
@@ -46,8 +48,23 @@ module "eks" {
       capacity_type  = "SPOT"
       k8s_labels = {
         Environment = "test"
+
       }
-    }  
+    }
+    x86 = {
+      ami_type  = "AL2_x86_64"
+
+      desired_capacity = 1
+      max_capacity     = 1
+      min_capacity     = 1
+
+      instance_types = ["t3.small"]
+      capacity_type  = "SPOT"
+      k8s_labels = {
+        Environment = "test"
+        
+      }
+    }    
   }
 }
 
