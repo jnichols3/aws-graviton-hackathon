@@ -26,7 +26,7 @@ At our normal day jobs, we have been converting workloads that run in docker ove
 
 ## What we learned
 
-Recent publications by NIST and the CIA have highlighted a need to tightly secure and control the supply-chain in regards to software components and containers used within Kubernetes environments.  While we would ideally just use an upstream image off of docker hub, the use of Docker hub, CircleCI, and now Github actions add several possible attack surfaces to the supply chain of a critical observability component that is intended to be deployed widely in an environment.   This is why we went for the lowest level update to the container build involved- the Makefile - so that we ourselves or other users of this project can build the container themselves locally or in a sandbox zero-trust build environment their choosing.
+<a target="_blank" href="https://media.defense.gov/2021/Aug/03/2002820425/-1/-1/1/CTR_KUBERNETES%20HARDENING%20GUIDANCE.PDF">Recent publications by the U.S. NSA and CISA</a> have highlighted a need to tightly secure and control the supply-chain in regards to software components and containers used within Kubernetes environments.  While we would ideally just use an upstream image off of docker hub, the use of Docker hub, CircleCI, and now Github actions add several possible attack surfaces to the supply chain of a critical observability component that is intended to be deployed widely in an environment.   This is why we went for the lowest level update to the container build involved- the Makefile - so that we ourselves or other users of this project can build the container themselves locally or in a sandbox zero-trust build environment their choosing.
 
 ## What's next for my project
 
